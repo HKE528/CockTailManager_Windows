@@ -53,5 +53,31 @@ namespace CockTailManager
         {
             InitDateGridView();
         }
+
+        private void cockTailDGV_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            
+            string name = cockTailDGV.SelectedCells[0].Value.ToString();
+
+            if (name != "")
+            {
+                CocktailDTO cocktail = new CocktailDTO();
+                cocktail.name = name;
+
+                DialogResult result = MessageBox.Show(this, "정말로 삭제하겠습니까?", "", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    cocktailDAO.DeleteData(cocktail);
+
+                    RefreshDGV(this, EventArgs.Empty);
+                }
+            }
+        }
     }
 }
