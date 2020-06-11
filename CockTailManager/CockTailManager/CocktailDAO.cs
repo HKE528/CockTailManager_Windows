@@ -19,9 +19,6 @@ namespace CockTailManager
         public CocktailDAO()
         {
             conn = new OdbcConnection("DSN=cocktail_manager");
-            conn.Open();
-
-            command = conn.CreateCommand();
         }
 
         public List<CocktailDTO> GetCocktails()
@@ -30,6 +27,9 @@ namespace CockTailManager
 
             try
             {
+                conn.Open();
+                command = conn.CreateCommand();
+
                 command.CommandText = "select * from cocktail";
                 reader = command.ExecuteReader();
 
@@ -46,7 +46,7 @@ namespace CockTailManager
                     cocktails.Add(cocktail);
                 }
 
-                MessageBox.Show("Sussece");
+                //MessageBox.Show("Sussece");
             }catch(SqlException e)
             {
                 MessageBox.Show("Failure");
@@ -60,6 +60,115 @@ namespace CockTailManager
             }
 
             return cocktails;
+        }
+
+        public bool InsertData(CocktailDTO cocktail)
+        {
+            try
+            {
+                conn.Open();
+                command = conn.CreateCommand();
+
+                command.CommandText = "insert into cockTail values('"
+                    + cocktail.name + "', "
+                    + cocktail.alcohol + ", '"
+                    + cocktail.baseLiquor + "', '"
+                    + cocktail.material + "', '"
+                    + cocktail.recipe + "')";
+                int count = command.ExecuteNonQuery();
+
+                if(count == 1)
+                {
+                    MessageBox.Show("저장 완료!!");
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("저장 실패ㅜ");
+                    return false;
+                }
+            }catch(SqlException e)
+            {
+                MessageBox.Show("저장 실패ㅜ");
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+                command.Dispose();
+            }
+        }
+
+        public bool UpdateData(CocktailDTO cocktail)
+        {
+            try
+            {
+                conn.Open();
+                command = conn.CreateCommand();
+
+                command.CommandText = "update cocktail set " + 
+                    "name='"+ cocktail.name + "', " +
+                    "alcohol=" + cocktail.alcohol + ", " + 
+                    "baseLiquor='"+ cocktail.baseLiquor + "', " +
+                    "meterial='"+ cocktail.material + "', " +
+                    "recipe='" + cocktail.recipe + "')";
+                int count = command.ExecuteNonQuery();
+
+                if (count == 1)
+                {
+                    MessageBox.Show("수정 완료!!");
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("수정 실패ㅜ");
+                    return false;
+                }
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("수정 실패ㅜ");
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+                command.Dispose();
+            }
+        }
+
+        public bool DeleteData(CocktailDTO cocktail)
+        {
+            try
+            {
+                conn.Open();
+                command = conn.CreateCommand();
+
+                command.CommandText = "delete from cocktail" +
+                    "where name='" + cocktail.name + "'";
+                int count = command.ExecuteNonQuery();
+
+                if (count == 1)
+                {
+                    MessageBox.Show("삭제 완료!!");
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("삭제 실패ㅜ");
+                    return false;
+                }
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("삭제 실패ㅜ");
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+                command.Dispose();
+            }
         }
     }
 }
