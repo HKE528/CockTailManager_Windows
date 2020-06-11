@@ -46,5 +46,19 @@ namespace CockTailManager
                 this.Dispose();
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearTextBox();
+        }
+
+        private void ClearTextBox()
+        {
+            tbName.Text = "";
+            tbAlcohol.Text = "";
+            tbBaseLiquor.Text = "";
+            tbMaterial.Text = "";
+            tbRecipe.Text = "";
+        }
     }
 }
