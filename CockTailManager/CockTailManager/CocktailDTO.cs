@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CockTailManager
 {
-    class CocktailDTO
+    public class CocktailDTO
     {
         private string _name;
         private int _alcohol;
