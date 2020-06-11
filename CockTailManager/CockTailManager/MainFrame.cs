@@ -48,7 +48,7 @@ namespace CockTailManager
 
             CocktailInfo info = new CocktailInfo(cocktail);
 
-            info.btnSave.Click += new EventHandler(RefreshDGV);
+            info.btnUpdate.Click += new EventHandler(RefreshDGV);
             info.StartPosition = FormStartPosition.Manual;
             info.Location = new Point(this.Location.X + 30, this.Location.Y + 30);
 

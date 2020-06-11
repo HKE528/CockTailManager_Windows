@@ -15,6 +15,9 @@ namespace CockTailManager
         public CocktailInfo()
         {
             InitializeComponent();
+
+            btnSave.Visible = true;
+            btnUpdate.Visible = false;
         }
         public CocktailInfo(CocktailDTO cocktail)
         {
@@ -25,6 +28,9 @@ namespace CockTailManager
             tbBaseLiquor.Text = cocktail.baseLiquor;
             tbMaterial.Text = cocktail.material;
             tbRecipe.Text = cocktail.recipe;
+
+            btnSave.Visible = false;
+            btnUpdate.Visible = true;
         }
 
         ~CocktailInfo()
@@ -39,14 +45,8 @@ namespace CockTailManager
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CocktailDTO cocktail = new CocktailDTO();
             CocktailDAO cocktailDAO = new CocktailDAO();
-
-            cocktail.name = tbName.Text;
-            cocktail.alcohol = int.Parse(tbAlcohol.Text);
-            cocktail.baseLiquor = tbBaseLiquor.Text;
-            cocktail.material = tbMaterial.Text;
-            cocktail.recipe = tbRecipe.Text;
+            CocktailDTO cocktail = SetDTO();
 
             bool isSuccess = cocktailDAO.InsertData(cocktail);
 
@@ -68,6 +68,32 @@ namespace CockTailManager
             tbBaseLiquor.Text = "";
             tbMaterial.Text = "";
             tbRecipe.Text = "";
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            CocktailDAO cocktailDAO = new CocktailDAO();
+            CocktailDTO cocktail = SetDTO();
+
+            bool isSuccess = cocktailDAO.UpdateData(cocktail);
+
+            if (isSuccess)
+            {
+                this.Dispose();
+            }
+        }
+
+        private CocktailDTO SetDTO()
+        {
+            CocktailDTO cocktail = new CocktailDTO();
+
+            cocktail.name = tbName.Text;
+            cocktail.alcohol = int.Parse(tbAlcohol.Text);
+            cocktail.baseLiquor = tbBaseLiquor.Text;
+            cocktail.material = tbMaterial.Text;
+            cocktail.recipe = tbRecipe.Text;
+
+            return cocktail;
         }
     }
 }
