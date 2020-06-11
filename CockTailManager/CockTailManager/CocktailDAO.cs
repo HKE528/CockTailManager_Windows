@@ -47,7 +47,7 @@ namespace CockTailManager
                 }
 
                 //MessageBox.Show("Sussece");
-            }catch(SqlException e)
+            }catch(InvalidOperationException e)
             {
                 MessageBox.Show("Failure");
                 Console.WriteLine(e.Message);
@@ -127,7 +127,7 @@ namespace CockTailManager
                     MessageBox.Show("저장 실패ㅜ");
                     return false;
                 }
-            }catch(SqlException e)
+            }catch(InvalidOperationException e)
             {
                 MessageBox.Show("저장 실패ㅜ");
                 return false;
@@ -165,7 +165,7 @@ namespace CockTailManager
                     return false;
                 }
             }
-            catch (SqlException e)
+            catch (InvalidOperationException e)
             {
                 MessageBox.Show("수정 실패ㅜ");
                 return false;
