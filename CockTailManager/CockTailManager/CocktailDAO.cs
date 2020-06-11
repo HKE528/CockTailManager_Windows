@@ -61,7 +61,47 @@ namespace CockTailManager
 
             return cocktails;
         }
+        public CocktailDTO SelectData(CocktailDTO cocktail)
+        {
+            CocktailDTO totalInfo = new CocktailDTO();
+            try
+            {
+                conn.Open();
+                command = conn.CreateCommand();
 
+                command.CommandText = "select * from cocktail " +
+                    "where name = '" + cocktail.name + "'";
+                reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    totalInfo.name = reader.GetString(0);
+                    totalInfo.alcohol = reader.GetInt32(1);
+                    totalInfo.baseLiquor = reader.GetString(2);
+                    totalInfo.material = reader.GetString(3);
+                    totalInfo.recipe = reader.GetString(4);
+
+                    return totalInfo;
+                }
+                else
+                {
+                    MessageBox.Show("불러오기 실패ㅜ");
+                    return null;
+                }
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("불러오기 실패ㅜ");
+                return null;
+            }
+            finally
+            {
+                reader.Close();
+                command.Dispose();
+                conn.Close();
+            }
+        }
         public bool InsertData(CocktailDTO cocktail)
         {
             try
@@ -94,8 +134,8 @@ namespace CockTailManager
             }
             finally
             {
-                conn.Close();
                 command.Dispose();
+                conn.Close();
             }
         }
 
@@ -132,8 +172,8 @@ namespace CockTailManager
             }
             finally
             {
-                conn.Close();
                 command.Dispose();
+                conn.Close();
             }
         }
 
@@ -166,8 +206,8 @@ namespace CockTailManager
             }
             finally
             {
-                conn.Close();
                 command.Dispose();
+                conn.Close();
             }
         }
     }
