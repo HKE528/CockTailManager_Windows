@@ -47,7 +47,7 @@ namespace CockTailManager
                 }
 
                 //MessageBox.Show("Sussece");
-            }catch(InvalidOperationException e)
+            }catch(OdbcException e)
             {
                 MessageBox.Show("Failure");
                 Console.WriteLine(e.Message);
@@ -90,7 +90,7 @@ namespace CockTailManager
                     return null;
                 }
             }
-            catch (SqlException e)
+            catch (Exception e)
             {
                 MessageBox.Show("불러오기 실패ㅜ");
                 return null;
@@ -127,7 +127,7 @@ namespace CockTailManager
                     MessageBox.Show("저장 실패ㅜ");
                     return false;
                 }
-            }catch(InvalidOperationException e)
+            }catch(Exception e)
             {
                 MessageBox.Show("저장 실패ㅜ");
                 return false;
@@ -150,8 +150,9 @@ namespace CockTailManager
                     "name='"+ cocktail.name + "', " +
                     "alcohol=" + cocktail.alcohol + ", " + 
                     "baseLiquor='"+ cocktail.baseLiquor + "', " +
-                    "meterial='"+ cocktail.material + "', " +
-                    "recipe='" + cocktail.recipe + "')";
+                    "material='" + cocktail.material + "', " +
+                    "recipe='" + cocktail.recipe + "' " + 
+                    "where name='"+ cocktail.name + "'";
                 int count = command.ExecuteNonQuery();
 
                 if (count == 1)
@@ -165,7 +166,7 @@ namespace CockTailManager
                     return false;
                 }
             }
-            catch (InvalidOperationException e)
+            catch (Exception e)
             {
                 MessageBox.Show("수정 실패ㅜ");
                 return false;
@@ -199,7 +200,7 @@ namespace CockTailManager
                     return false;
                 }
             }
-            catch (SqlException e)
+            catch (Exception e)
             {
                 MessageBox.Show("삭제 실패ㅜ");
                 return false;
