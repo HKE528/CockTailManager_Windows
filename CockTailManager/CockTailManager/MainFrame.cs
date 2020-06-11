@@ -24,20 +24,6 @@ namespace CockTailManager
             InitDateGridView();
         }
 
-        private void InitDateGridView()
-        {
-            cocktails = cocktailDAO.GetCocktails();
-
-            cockTailDGV.Rows.Clear();
-            if (cocktails.Count != 0)
-            {
-                foreach(var cocktail in cocktails)
-                {
-                    cockTailDGV.Rows.Add(cocktail.name, cocktail.alcohol, cocktail.baseLiquor);
-                }
-            }
-        }
-
         private void btnCreat_Click(object sender, EventArgs e)
         {
             CocktailInfo info = new CocktailInfo();
@@ -53,10 +39,20 @@ namespace CockTailManager
         {
             InitDateGridView();
         }
-
-        private void cockTailDGV_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void cockTailDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            CocktailDTO cocktail = new CocktailDTO();
+            string name = cockTailDGV.SelectedCells[0].Value.ToString();
+            cocktail.name = name;
+            cocktail = cocktailDAO.SelectData(cocktail);
+
+            CocktailInfo info = new CocktailInfo(cocktail);
+
+            info.btnSave.Click += new EventHandler(RefreshDGV);
+            info.StartPosition = FormStartPosition.Manual;
+            info.Location = new Point(this.Location.X + 30, this.Location.Y + 30);
+
+            info.Show();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -79,5 +75,20 @@ namespace CockTailManager
                 }
             }
         }
+        private void InitDateGridView()
+        {
+            cocktails = cocktailDAO.GetCocktails();
+
+            cockTailDGV.Rows.Clear();
+            if (cocktails.Count != 0)
+            {
+                foreach (var cocktail in cocktails)
+                {
+                    cockTailDGV.Rows.Add(cocktail.name, cocktail.alcohol, cocktail.baseLiquor);
+                }
+            }
+        }
+
+
     }
 }

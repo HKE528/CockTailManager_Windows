@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Authentication;
 
 namespace CockTailManager
 {
@@ -16,6 +15,16 @@ namespace CockTailManager
         public CocktailInfo()
         {
             InitializeComponent();
+        }
+        public CocktailInfo(CocktailDTO cocktail)
+        {
+            InitializeComponent();
+
+            tbName.Text = cocktail.name;
+            tbAlcohol.Text = cocktail.alcohol.ToString();
+            tbBaseLiquor.Text = cocktail.baseLiquor;
+            tbMaterial.Text = cocktail.material;
+            tbRecipe.Text = cocktail.recipe;
         }
 
         ~CocktailInfo()
