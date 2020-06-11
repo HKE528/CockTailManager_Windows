@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.cockTailDGV = new System.Windows.Forms.DataGridView();
-            this.btnCreat = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.baseLiqur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alcohol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCreat = new System.Windows.Forms.Button();
+            this.cockTailDGV = new System.Windows.Forms.DataGridView();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alcohol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baseLiqur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cockTailDGV)).BeginInit();
             this.SuspendLayout();
@@ -48,50 +49,8 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(618, 840);
+            this.mainPanel.Size = new System.Drawing.Size(440, 696);
             this.mainPanel.TabIndex = 0;
-            // 
-            // cockTailDGV
-            // 
-            this.cockTailDGV.AllowUserToAddRows = false;
-            this.cockTailDGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cockTailDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.cockTailDGV.ColumnHeadersHeight = 45;
-            this.cockTailDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.cockTailDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
-            this.alcohol,
-            this.baseLiqur});
-            this.cockTailDGV.Location = new System.Drawing.Point(10, 10);
-            this.cockTailDGV.Name = "cockTailDGV";
-            this.cockTailDGV.ReadOnly = true;
-            this.cockTailDGV.RowHeadersVisible = false;
-            this.cockTailDGV.RowHeadersWidth = 62;
-            this.cockTailDGV.RowTemplate.Height = 30;
-            this.cockTailDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cockTailDGV.Size = new System.Drawing.Size(597, 737);
-            this.cockTailDGV.TabIndex = 0;
-            // 
-            // btnCreat
-            // 
-            this.btnCreat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCreat.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCreat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreat.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold);
-            this.btnCreat.Location = new System.Drawing.Point(110, 753);
-            this.btnCreat.Name = "btnCreat";
-            this.btnCreat.Size = new System.Drawing.Size(180, 80);
-            this.btnCreat.TabIndex = 1;
-            this.btnCreat.Text = "생성";
-            this.btnCreat.UseVisualStyleBackColor = false;
-            this.btnCreat.Click += new System.EventHandler(this.btnCreat_Click);
             // 
             // btnDelete
             // 
@@ -100,30 +59,55 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(330, 753);
+            this.btnDelete.Location = new System.Drawing.Point(246, 624);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(180, 80);
+            this.btnDelete.Size = new System.Drawing.Size(150, 60);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "삭제";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // baseLiqur
+            // btnCreat
             // 
-            this.baseLiqur.Frozen = true;
-            this.baseLiqur.HeaderText = "베이스";
-            this.baseLiqur.MinimumWidth = 8;
-            this.baseLiqur.Name = "baseLiqur";
-            this.baseLiqur.ReadOnly = true;
-            this.baseLiqur.Width = 200;
+            this.btnCreat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCreat.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCreat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreat.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold);
+            this.btnCreat.Location = new System.Drawing.Point(56, 624);
+            this.btnCreat.Name = "btnCreat";
+            this.btnCreat.Size = new System.Drawing.Size(150, 60);
+            this.btnCreat.TabIndex = 1;
+            this.btnCreat.Text = "생성";
+            this.btnCreat.UseVisualStyleBackColor = false;
+            this.btnCreat.Click += new System.EventHandler(this.btnCreat_Click);
             // 
-            // alcohol
+            // cockTailDGV
             // 
-            this.alcohol.Frozen = true;
-            this.alcohol.HeaderText = "도수";
-            this.alcohol.MinimumWidth = 8;
-            this.alcohol.Name = "alcohol";
-            this.alcohol.ReadOnly = true;
-            this.alcohol.Width = 200;
+            this.cockTailDGV.AllowUserToAddRows = false;
+            this.cockTailDGV.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cockTailDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.cockTailDGV.ColumnHeadersHeight = 45;
+            this.cockTailDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.cockTailDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.alcohol,
+            this.baseLiqur});
+            this.cockTailDGV.GridColor = System.Drawing.SystemColors.Control;
+            this.cockTailDGV.Location = new System.Drawing.Point(10, 10);
+            this.cockTailDGV.Name = "cockTailDGV";
+            this.cockTailDGV.ReadOnly = true;
+            this.cockTailDGV.RowHeadersVisible = false;
+            this.cockTailDGV.RowHeadersWidth = 62;
+            this.cockTailDGV.RowTemplate.Height = 30;
+            this.cockTailDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cockTailDGV.Size = new System.Drawing.Size(421, 604);
+            this.cockTailDGV.TabIndex = 0;
             // 
             // name
             // 
@@ -132,13 +116,33 @@
             this.name.MinimumWidth = 8;
             this.name.Name = "name";
             this.name.ReadOnly = true;
-            this.name.Width = 200;
+            this.name.Width = 160;
+            // 
+            // alcohol
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.alcohol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.alcohol.Frozen = true;
+            this.alcohol.HeaderText = "도수";
+            this.alcohol.MinimumWidth = 8;
+            this.alcohol.Name = "alcohol";
+            this.alcohol.ReadOnly = true;
+            this.alcohol.Width = 130;
+            // 
+            // baseLiqur
+            // 
+            this.baseLiqur.Frozen = true;
+            this.baseLiqur.HeaderText = "베이스";
+            this.baseLiqur.MinimumWidth = 8;
+            this.baseLiqur.Name = "baseLiqur";
+            this.baseLiqur.ReadOnly = true;
+            this.baseLiqur.Width = 130;
             // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 840);
+            this.ClientSize = new System.Drawing.Size(440, 696);
             this.Controls.Add(this.mainPanel);
             this.Font = new System.Drawing.Font("굴림", 12F);
             this.Margin = new System.Windows.Forms.Padding(4);
