@@ -28,7 +28,7 @@ namespace CockTailManager
         {
             cocktails = cocktailDAO.GetCocktails();
 
-            //cockTailDGV.Refresh();
+            cockTailDGV.Rows.Clear();
             if (cocktails.Count != 0)
             {
                 foreach(var cocktail in cocktails)
@@ -42,9 +42,16 @@ namespace CockTailManager
         {
             CocktailInfo info = new CocktailInfo();
 
-            info.Show();
+            info.btnSave.Click += new EventHandler(RefreshDGV);
+            info.StartPosition = FormStartPosition.Manual;
+            info.Location = new Point(this.Location.X + 30, this.Location.Y + 30);
 
-            Console.WriteLine("btnCreat_Click");
+            info.Show();
+        }
+
+        private void RefreshDGV(object sender, EventArgs e)
+        {
+            InitDateGridView();
         }
     }
 }
