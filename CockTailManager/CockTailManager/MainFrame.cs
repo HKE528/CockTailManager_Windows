@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace CockTailManager
 {
-    public partial class Form1 : Form
+    public partial class MainFrame : Form
     {
-        public Form1()
+        List<CocktailDTO> cocktails;
+        CocktailDAO cocktailDAO;
+
+        public MainFrame()
         {
             InitializeComponent();
+        }
+
+        private void btnCreat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
