@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbAlcohol = new System.Windows.Forms.TextBox();
-            this.tbBaseLiquor = new System.Windows.Forms.TextBox();
-            this.tbMaterial = new System.Windows.Forms.TextBox();
             this.tbRecipe = new System.Windows.Forms.TextBox();
+            this.tbMaterial = new System.Windows.Forms.TextBox();
+            this.tbBaseLiquor = new System.Windows.Forms.TextBox();
+            this.tbAlcohol = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -63,53 +63,43 @@
             this.panel1.Size = new System.Drawing.Size(530, 800);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // tbRecipe
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 12F);
-            this.label1.Location = new System.Drawing.Point(30, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "이름    : ";
+            this.tbRecipe.Font = new System.Drawing.Font("굴림", 12F);
+            this.tbRecipe.Location = new System.Drawing.Point(168, 443);
+            this.tbRecipe.Multiline = true;
+            this.tbRecipe.Name = "tbRecipe";
+            this.tbRecipe.Size = new System.Drawing.Size(329, 336);
+            this.tbRecipe.TabIndex = 9;
+            this.tbRecipe.Tag = "tbInfo";
             // 
-            // tbName
+            // tbMaterial
             // 
-            this.tbName.Font = new System.Drawing.Font("굴림", 12F);
-            this.tbName.Location = new System.Drawing.Point(168, 27);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(329, 35);
-            this.tbName.TabIndex = 1;
+            this.tbMaterial.Font = new System.Drawing.Font("굴림", 12F);
+            this.tbMaterial.Location = new System.Drawing.Point(168, 210);
+            this.tbMaterial.Multiline = true;
+            this.tbMaterial.Name = "tbMaterial";
+            this.tbMaterial.Size = new System.Drawing.Size(329, 208);
+            this.tbMaterial.TabIndex = 8;
+            this.tbMaterial.Tag = "tbInfo";
             // 
-            // label2
+            // tbBaseLiquor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 12F);
-            this.label2.Location = new System.Drawing.Point(30, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "도수    : ";
+            this.tbBaseLiquor.Font = new System.Drawing.Font("굴림", 12F);
+            this.tbBaseLiquor.Location = new System.Drawing.Point(168, 147);
+            this.tbBaseLiquor.Name = "tbBaseLiquor";
+            this.tbBaseLiquor.Size = new System.Drawing.Size(329, 35);
+            this.tbBaseLiquor.TabIndex = 7;
+            this.tbBaseLiquor.Tag = "tbInfo";
             // 
-            // label3
+            // tbAlcohol
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 12F);
-            this.label3.Location = new System.Drawing.Point(30, 150);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "베이스 : ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 12F);
-            this.label4.Location = new System.Drawing.Point(30, 210);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 24);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "재료    : ";
+            this.tbAlcohol.Font = new System.Drawing.Font("굴림", 12F);
+            this.tbAlcohol.Location = new System.Drawing.Point(168, 87);
+            this.tbAlcohol.Name = "tbAlcohol";
+            this.tbAlcohol.Size = new System.Drawing.Size(329, 35);
+            this.tbAlcohol.TabIndex = 6;
+            this.tbAlcohol.Tag = "tbInfo";
             // 
             // label5
             // 
@@ -121,39 +111,54 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "레시피 : ";
             // 
-            // tbAlcohol
+            // label4
             // 
-            this.tbAlcohol.Font = new System.Drawing.Font("굴림", 12F);
-            this.tbAlcohol.Location = new System.Drawing.Point(168, 87);
-            this.tbAlcohol.Name = "tbAlcohol";
-            this.tbAlcohol.Size = new System.Drawing.Size(329, 35);
-            this.tbAlcohol.TabIndex = 6;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 12F);
+            this.label4.Location = new System.Drawing.Point(30, 210);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 24);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "재료    : ";
             // 
-            // tbBaseLiquor
+            // label3
             // 
-            this.tbBaseLiquor.Font = new System.Drawing.Font("굴림", 12F);
-            this.tbBaseLiquor.Location = new System.Drawing.Point(168, 147);
-            this.tbBaseLiquor.Name = "tbBaseLiquor";
-            this.tbBaseLiquor.Size = new System.Drawing.Size(329, 35);
-            this.tbBaseLiquor.TabIndex = 7;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("굴림", 12F);
+            this.label3.Location = new System.Drawing.Point(30, 150);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 24);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "베이스 : ";
             // 
-            // tbMaterial
+            // label2
             // 
-            this.tbMaterial.Font = new System.Drawing.Font("굴림", 12F);
-            this.tbMaterial.Location = new System.Drawing.Point(168, 210);
-            this.tbMaterial.Multiline = true;
-            this.tbMaterial.Name = "tbMaterial";
-            this.tbMaterial.Size = new System.Drawing.Size(329, 208);
-            this.tbMaterial.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 12F);
+            this.label2.Location = new System.Drawing.Point(30, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "도수    : ";
             // 
-            // tbRecipe
+            // tbName
             // 
-            this.tbRecipe.Font = new System.Drawing.Font("굴림", 12F);
-            this.tbRecipe.Location = new System.Drawing.Point(168, 443);
-            this.tbRecipe.Multiline = true;
-            this.tbRecipe.Name = "tbRecipe";
-            this.tbRecipe.Size = new System.Drawing.Size(329, 336);
-            this.tbRecipe.TabIndex = 9;
+            this.tbName.Font = new System.Drawing.Font("굴림", 12F);
+            this.tbName.Location = new System.Drawing.Point(168, 27);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(329, 35);
+            this.tbName.TabIndex = 1;
+            this.tbName.Tag = "tbInfo";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("굴림", 12F);
+            this.label1.Location = new System.Drawing.Point(26, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "이름    : ";
             // 
             // btnSave
             // 
@@ -165,6 +170,7 @@
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -176,6 +182,7 @@
             this.btnClose.TabIndex = 11;
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnClear
             // 
@@ -195,12 +202,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClientSize = new System.Drawing.Size(549, 892);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CocktailInfo";
-            this.Size = new System.Drawing.Size(550, 900);
+            this.ShowIcon = false;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -220,8 +230,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnClear;
+        public System.Windows.Forms.Button btnSave;
     }
 }
