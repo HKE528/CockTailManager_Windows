@@ -144,7 +144,7 @@ namespace CockTailManager
                 conn.Open();
                 command = conn.CreateCommand();
 
-                command.CommandText = "delete from cocktail" +
+                command.CommandText = "delete from cocktail " +
                     "where name='" + cocktail.name + "'";
                 int count = command.ExecuteNonQuery();
 
